@@ -1,0 +1,187 @@
+commit dc6b213c506fa2bb9dbc77b588bcc406d4f74460
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Fri Jan 5 11:49:47 2024 +0000
+
+    Fix rebase
+
+commit 84c89d8e0dfd72064c4b5cf0ce551feb3b2b19f0
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Wed Jan 3 22:55:35 2024 +0000
+
+    Add hyperparameters optimization to jupyter notebook
+
+commit 19f663790389312424aa0f45eaf32aed8c960f9c
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Wed Jan 3 14:52:47 2024 +0000
+
+    Fix: restore output v1 files
+
+commit c04e5fab0e855b103876cefa71e710e9625b9823
+Merge: d2b93be 8357794
+Author: Tomislav Dukez <93544955+tomdu3@users.noreply.github.com>
+Date:   Wed Jan 3 14:26:13 2024 +0000
+
+    Merge pull request #2 from tomdu3/fix-lsf
+    
+    Fix: revert files from lsf upload
+
+commit 83577945ff198a5938e7d9de9260b4ab61ea96e5
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Wed Jan 3 14:23:15 2024 +0000
+
+    Fix: revert files from lsf upload
+
+commit d2b93be553e97f61cb65caf2de99a328b9167056
+Merge: 3571587 700f202
+Author: Tomislav Dukez <93544955+tomdu3@users.noreply.github.com>
+Date:   Wed Jan 3 13:06:32 2024 +0000
+
+    Merge pull request #1 from tomdu3/fix-upload
+    
+    Fix: update gitignore after lfs fix
+
+commit 700f2027ad26df007bf8f2f937bfc33cacaa07fa
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Wed Jan 3 12:52:27 2024 +0000
+
+    Fix: update gitignore after lfs fix
+
+commit 35715871602e1a49a388e17b2929f96cc8b33f50
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Wed Jan 3 11:33:43 2024 +0000
+
+    Fix: change confusion matrix output
+
+commit 9fcb634598cd5342657aeba5c449a250709cf387
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Jan 2 17:22:00 2024 +0000
+
+    Add Classification report, Confusion Matrix and predicton output
+
+commit 5b03f358d1eea13833ae47c2c875f71f86428f8f
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Jan 2 16:35:49 2024 +0000
+
+    Fix: ignore model file on GitHub
+
+commit 929349bde931a91aabb8ba6142da3012de3880a6
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Jan 2 15:54:53 2024 +0000
+
+    Add evaluation function
+
+commit ed1af7fc5c4d36ff559f2637dee19f9e20fa6049
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Jan 2 15:40:58 2024 +0000
+
+    Add model training and model save
+
+commit 46b01f2889d201ebf38fe46688028dd431748084
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Mon Jan 1 15:55:31 2024 +0000
+
+    Add save class indices and hypertutning the model function to the notebook
+
+commit cea0e64b190448c0e5244ce5779bfb59a6f0e2e3
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Fri Dec 29 14:16:19 2023 +0000
+
+    Add data image augmentation and plotting in notebook
+
+commit 7cdfd6e3590d84a04d6725b21ae3674fb3f382d5
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Thu Dec 28 11:37:29 2023 +0000
+
+    Add image average difference and image montage
+
+commit 9ce8c28c948f1f984938f086a65c0ed9ebf625e3
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Dec 26 15:32:24 2023 +0000
+
+    Add data visualization notebook, image shape, average an variability
+
+commit 433405e18a66cc7c7ec69326ff67f760a9a414dc
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Dec 26 13:36:46 2023 +0000
+
+    Fix: update requirements.txt
+
+commit c2c05625e81a5a6b2dcd85dd5d546953721ffb23
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Dec 26 11:42:17 2023 +0000
+
+    Add data set split and data collection notebook conclusion
+
+commit 00d20d76cf5eac8fab1539c21c3a7c114ef6683d
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Dec 26 08:39:57 2023 +0000
+
+    Add finish data cleaning section in notebook
+
+commit 33b590abc5f80b8dd6d77dd943204ab970c895f1
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Dec 26 08:18:56 2023 +0000
+
+    Add data cleaning - sort images and remove non image files in input
+
+commit 612dbe78c275a46e98912fcbef7f1a287e33d7f3
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Dec 26 07:16:49 2023 +0000
+
+    Revert "Add data cleaning - sort images and remove non image files in input"
+    
+    This reverts commit cf99c2f87c086438ea11e98bc5cc7f22a9cda6ab.
+
+commit cf99c2f87c086438ea11e98bc5cc7f22a9cda6ab
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Tue Dec 26 07:14:40 2023 +0000
+
+    Add data cleaning - sort images and remove non image files in input
+
+commit 170bfc8bfcc57628ca17fd2098a96646dca0c733
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Mon Dec 25 21:58:52 2023 +0000
+
+    Add Data Set Description, download and prep
+
+commit 71efa7dcea0e4e4dac6f674ac33be176c20e9ec5
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Mon Dec 25 21:20:33 2023 +0000
+
+    Add: Dta Collection Notebook and Data Set description
+
+commit 354df56ef9a3264f17f8205fe35187cd10a3a419
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Wed Dec 20 12:43:16 2023 +0000
+
+    Docs: Add rationale
+
+commit 7f6deb2bed9637d02b3e1a186f0e860708e0c6f0
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Sun Dec 17 11:01:24 2023 +0000
+
+    Docs: Add 2 Hypotheses
+
+commit 1cc4a24696a0f14769bfe4a180cd0d901706e479
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Sun Dec 17 06:23:26 2023 +0000
+
+    Docs: Add Business Requirements
+
+commit 2ca9b670c38626ce2dc8eed75d13b76d259e7c17
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Sun Dec 17 05:46:39 2023 +0000
+
+    Docs: Add dataset description
+
+commit 3b4e1a7f53c48b406be4d3b095f20c43d180e63e
+Author: Tomislav Dukez <tomdu3@ymail.com>
+Date:   Sat Dec 16 21:18:42 2023 +0000
+
+    Add dataset input images
+
+commit fec25eee71680d49b7c1435c7ea6d78197883770
+Author: Tomislav Dukez <93544955+tomdu3@users.noreply.github.com>
+Date:   Sat Dec 16 21:15:03 2023 +0000
+
+    Initial commit
