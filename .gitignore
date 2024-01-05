@@ -10,5 +10,7 @@ cloudinary_python.txt
 kaggle.json
 venv/
 .env
-input/
+input/train
+input/test
+input/validation
 my_dir/
