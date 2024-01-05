@@ -1,69 +1,65 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Codeanywhere Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the IDE Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the IDE Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use. 
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. Log into <a href="https://app.codeanywhere.com/" target="_blank" rel="noreferrer">CodeAnywhere</a> with your GitHub account.
-
-1. On your Dashboard, click on the New Workspace button
-
-1. Paste in the URL you copied from GitHub earlier
-
-1. Click Create
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and <code>pip3 install -r requirements.txt</code>
-
-1. In the terminal type <code>pip3 install jupyter</code>
-
-1. In the terminal type <code>jupyter notebook --NotebookApp.token='' --NotebookApp.password=''</code> to start the jupyter server.
-
-1. Open port 8888 preview or browser
-
-1. Open the jupyter_notebooks directory in the jupyter webpage that has opened and click on the notebook you want to open.
-
-1. Click the button Not Trusted and choose Trust.
-
-Note that the kernel says Python 3. It inherits from the workspace so it will be Python-3.8.12 as installed by our template. To confirm this you can use <code>! python --version</code> in a notebook code cell.
-
-## IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In the IDE terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
 
 ## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size and to have a shorter model training time. If you are doing an image recognition project, we suggest you consider using an image shape that is 100px × 100px or 50px × 50px, to ensure the model meets the performance requirement but is smaller than 100Mb for a smoother push to GitHub. A reasonably sized image set is ~5000 images, but you can choose ~10000 lines for numeric or textual data. 
+The dataset is **Brain Tumor** dataset from [Kaggle](https://www.kaggle.com/datasets/jakeshbohaju/brain-tumor/data)
 
+This is a brain tumor feature dataset including five first-order features and eight texture features with the target level (in the column Class).
+
+- First Order Features
+    - Mean
+    - Variance
+    - Standard Deviation
+    - Skewness
+    - Kurtosis
+
+- Second Order Features
+    - Contrast
+    - Energy
+    - ASM (Angular second moment)
+    - Entropy
+    - Homogeneity
+    - Dissimilarity
+    - Correlation
+    - Coarseness 
+
+Image column defines image name and Class column defines either the image has tumor or not (1 = Tumor, 0 = Non-Tumor)
 
 ## Business Requirements
-* Describe your business requirements
+The primary objective of this project is to develop a machine learning model for the early detection of brain tumors from medical images. The model should assist medical professionals in making quicker and more accurate diagnoses, and the patients should benefit from the earlier detection and the tempestive and appropriate treatment planning.
 
+Key Stakeholders, therefore shoud be:
+    - Medical professionals
+    - Patients
+    - Hospitals and healthcare facilities
+
+Requirements:
+
+- Accuracy: The model should have a high accuracy rate in classifying brain images as either tumor (1) or non-tumor (0).
+- Interpretability: The model should provide some insight into the prediction process and the relevant feature importance in that process, so the medical professionals could understand the relevant discoveries.
+- Scalability: The solution should be scalable to handle a large volume of brain images from various sources.
+- Speed: The model should be able to make predictions in real-time so that the reliable quick diagnosis could be make.
+- Privacy: The meticulous attention should be given in the data collection in order to guarantee the patient's anonymity and consent for the data usage.
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+- Hypothesis 1: The deep learning model with convolutional neural network (CNN) architecture will be able to accurately classify brain images as tumor or non-tumor.
 
+- Hypothesis 2: Data augmentation techniques will help improve model generalization.
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 * List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
+**Business Requirement 1**: Data Visualization
+**Business Requirement 2**: Classification
 
+- Accuracy: Visualisations should make the model's performance metrics comprehensible. We will plot learning curves to monitor training progress and use confusion matrices for a detailed breakdown of classification results.
+
+Interpretability: Visualizations, especially heatmaps, will provide insight into how the model is making predictions. It is aligned with the interpretability requirement.
+
+Scalability: We will analyze the model's performance on varying sizes of datasets using visualizations to ensure it scales efficiently.
+
+Speed: Monitoring the model's inference time will ensure it meets the speed requirement.
+
+Privacy: This will be ensured through data anonymization, which will be part of the data handling and model deployment processes.
 
 ## ML Business Case
 * In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
