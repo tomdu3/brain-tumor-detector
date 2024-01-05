@@ -8,3 +8,7 @@ node_modules/
 .github/
 cloudinary_python.txt
 kaggle.json
+venv/
+.env
+input/
+my_dir/
