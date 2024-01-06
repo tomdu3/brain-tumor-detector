@@ -1,5 +1,10 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+# Brain Tumor Detector
+
+Brain Tumor Detector is a data science and machine learning project that is a 5th and final Project of the Code Institute's Bootcamp in Full Stack Software Development with specialization in Predictive Analytics.
+The business goal of this project is the differentiation of the healthy brain and the one with the tumor based on the brain MRI scan images. The project is realised with the [Streamlit Dashboard](## TODO - heroku link) and gives to the client a possibility to upload the MRI brain scan in order to predict the possible tumor diagnosis. THe dashboard offers the results of the data analysis, description and the analysis of the project's hypothesis, and details about the performance of the machine learning model.
+The project includes a series of Jupyter Notebooks that represent a pipleine = importation and cleaning  of the data, data visualization, development and evaluation of the deep learning model.
 
 ## Dataset Content
 The dataset is **Brain Tumor** dataset from [Kaggle](https://www.kaggle.com/datasets/jakeshbohaju/brain-tumor/data)
@@ -26,9 +31,10 @@ This is a brain tumor feature dataset including five first-order features and ei
 Image column defines image name and Class column defines either the image has tumor or not (1 = Tumor, 0 = Non-Tumor)
 
 ## Business Requirements
+The (fictitious) Department of Brain Repair and Rehabilitation of the Health Institute in London, UK
 The primary objective of this project is to develop a machine learning model for the early detection of brain tumors from medical images. The model should assist medical professionals in making quicker and more accurate diagnoses, and the patients should benefit from the earlier detection and the tempestive and appropriate treatment planning.
 
-Key Stakeholders, therefore shoud be:
+Key Stakeholders, therefore should be:
     - Medical professionals
     - Patients
     - Hospitals and healthcare facilities
@@ -40,6 +46,12 @@ Requirements:
 - Scalability: The solution should be scalable to handle a large volume of brain images from various sources.
 - Speed: The model should be able to make predictions in real-time so that the reliable quick diagnosis could be make.
 - Privacy: The meticulous attention should be given in the data collection in order to guarantee the patient's anonymity and consent for the data usage.
+
+In short, the project businsess objectives are as follows:
+- The client is interested in having an analysis of the visual difference between the MRI brain scan of healthy and brain with tumor. The analysis should provide: the average image and variablity per label in the data set.
+- The client is interested in having a functional and reliable ML model that could predict the presence or absence of the tumor from the image of the MRI brain scan. For the realisation of this business objective, a deep learning pipeline should be developed with the binary classification of the MRI images. The said pipeline should be also deployed.
+- The Streamlit Dashboard will be developed that will finally serve as a platform for the presentation of the results of first two business objectives, together with the interactive implementation of the prediction of the unseen MRI image.
+
 
 ## Hypothesis and how to validate?
 - Hypothesis 1: The deep learning model with convolutional neural network (CNN) architecture will be able to accurately classify brain images as tumor or non-tumor.
