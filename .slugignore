@@ -1,5 +1,8 @@
-outputs/v1
-outputs/v2
-outputs/v3
+outputs/v1/*
+outputs/v2/*
+outputs/v3/*
+jupyter_notebooks/*
+input/validation/mri-non-tumor/????.jpg
+input/validation/mri-tumor/????.jpg
 
 
