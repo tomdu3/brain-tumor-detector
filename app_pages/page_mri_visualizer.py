@@ -42,7 +42,7 @@ def page_mri_visualizer_body():
           st.image(diff_between_avgs, caption='Difference between average images')
 
     if st.checkbox('Image Montage'): 
-      st.write('* To refresh the montage, click on the 'Create Montage' button')
+      st.write('* To refresh the montage, click on the "Create Montage" button')
       my_data_dir = 'input/'
       labels = os.listdir(os.path.join(my_data_dir, 'validation'))
       label_to_display = st.selectbox(label='Select label', options=labels, index=0)
@@ -93,5 +93,5 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
 
 
   else:
-    print('The label you selected doesn't exist.')
+    print('The label you selected doesn\'t exist.')
     print(f'The existing options are: {labels}')
