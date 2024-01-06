@@ -14,7 +14,7 @@ def plot_predictions_probabilities(pred_proba, pred_class):
 
     prob_per_class = pd.DataFrame(
         data=[0, 0],
-        index={'Parasitised': 0, 'Uninfected': 1}.keys(),
+        index={'Healthy Brain': 0, 'Tumor': 1}.keys(),
         columns=['Probability']
     )
     prob_per_class.loc[pred_class] = pred_proba
@@ -49,17 +49,17 @@ def load_model_and_predict(my_image, version):
     Load and perform ML prediction over live images
     """
 
-    model = load_model(f"outputs/{version}/malaria_detector_model.h5")
+    model = load_model(f"outputs/{version}/brain_tumor_detect_model.h5")
 
     pred_proba = model.predict(my_image)[0, 0]
 
-    target_map = {v: k for k, v in {'Parasitised': 0, 'Uninfected': 1}.items()}
+    target_map = {v: k for k, v in {'Healthy Brain': 0, 'Tumor': 1}.items()}
     pred_class = target_map[pred_proba > 0.5]
     if pred_class == target_map[0]:
         pred_proba = 1 - pred_proba
 
     st.write(
-        f"The predictive analysis indicates the sample cell is "
-        f"**{pred_class.lower()}** with malaria.")
+        f"The predictive analysis indicates the sample Brain MRI Scan shows "
+        f"**{pred_class.lower()}**.")
 
     return pred_proba, pred_class
