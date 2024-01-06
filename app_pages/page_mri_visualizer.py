@@ -16,7 +16,7 @@ def page_mri_visualizer_body():
         f'* The client is interested in having a study that visually '
         f'differentiates a healthy brain MRI scan from the one with tumor .')
     
-    version = 'v1'
+    version = 'v4'
     if st.checkbox('Difference between average and variability image'):
       
       avg_non_tumor = plt.imread(f'outputs/{version}/avg_var_mri-non-tumor.png')
