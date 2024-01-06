@@ -27,5 +27,11 @@ def page_ml_performance_metrics():
 
     st.write("### Generalised Performance on Test Set")
     st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
+    st.write("---")
     
-    
+    st.write("### Confusion Matrix")
+    col1 = st.beta_columns(1)[0]
+    with col1: 
+        model_acc = plt.imread(f"outputs/{version}/confusion_matrix.png")
+        st.image(model_acc, caption='Confusion Matrix')
+    st.write("---")
