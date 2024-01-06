@@ -12,5 +12,4 @@ venv/
 .env
 input/train
 input/test
-input/validation
 my_dir/
