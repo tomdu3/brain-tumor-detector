@@ -94,6 +94,33 @@ Business Requirement 2: Classification
 - High recall in detecting brain tumors is critical, as the cost of not identifying a present tumor (false negatives) is significantly higher than incorrectly identifying a tumor in a healthy brain (false positives). The preliminary threshold for recall should be also reasonabely high, but the dataset could be a limiting factor.
 - Therefore, a successful model for this project is one that achieves an F1 score of 0.95 or higher and a recall rate for detecting brain tumors of 0.98 or higher, aligning with the critical nature of accurate and reliable medical diagnoses.
 
+## ML Model Development
+
+The ML model is a Convolutional Neural Network (CNN) built using Keras, a high-level neural networks API. This model is designed for binary classification tasks, as indicated by the use of the sigmoid activation function in the output layer and the binary crossentropy loss function. Here's a breakdown of its architecture:
+
+### Version 1
+There are three convolutional layers, each followed by a max pooling layer. These are used for feature extraction from the input images. Each convolutional layer is followed by a max pooling layer with a pool size of 2x2, which reduces the spatial dimensions of the output.After the convolutional and pooling layers, the model flattens the output to convert it into a one-dimensional array. This is necessary for feeding into the dense layers for classification.
+
+Dense Layers:
+The first dense layer has 128 neurons and uses 'relu' activation. It serves as a fully connected layer that processes features extracted by the convolutional layers. This is followed by a dropout layer with a dropout rate of 0.5 to reduce overfitting by randomly setting input units to 0 during training. The final dense layer has 1 neuron with a 'sigmoid' activation function. This is suitable for binary classification, producing a probability output indicating the likelihood of belonging to one of the two classes.
+
+Compilation:
+The model uses the 'adam' optimizer, a popular choice for deep learning models due to its efficiency. The loss function is 'binary_crossentropy', which is standard for binary classification problems. The model seemed well-suited for tasks like image-based binary classification, which could include applications such as distinguishing between two different types of objects or conditions in images.
+Unfortunatelly, the evaluation of the model didn't give a desired output. 
+
+<details>
+<summary>These are the results of the first attempt:</summary>
+
+![Accuracy Diagram V1](./outputs/v1/model_training_acc.png)
+![Losses Diagram V1](./outputs/v1/model_training_losses.png)
+![Confusion Matrix V1](./outputs/v1/confusion_matrix.png)
+
+</details>
+
+### Version 2
+The improved and advanced setup for the build_model function now takes hyperparameters as argument. The hyperparameters are the number of convolution layers, number of filters, number of units in dense layer, dropout rate, learning rate of optimizer, etc.
+The number of units in the dense layer can range from 32-512, and the dropout layer rate can be adjusted from 0.0-0.5. The output layer settings and compilation settings of the model are similar to those of the previous model.
+The hyperparameter tuning with RandomSearch is optimizing the model. The tuner will try different hyperparameter settings over a set number of times to find the optimal configuration for the task. The goal is to maximize the validation accuracy of the model. The class weights calculation is used to deal with class imbalance in training data. This is especially useful for medical imaging datasets such as MRI scans, as one class can be heavily underrepresented. By tuning the hyperparameter, the model will be able to perform better on the specific set of MRI images.
 
 ## Dashboard Design
 - This project is presented through a Streamlit dashboard web application that consists of five app pages. The client can effortlessly navigate through these pages using the interactive menu located on the left side of the page, as depicted below.
@@ -150,7 +177,15 @@ This application page showcases written documentation of the project's hypothese
 * You can break the credits section up into Content and Media, depending on what you have included in your project. 
 
 ### Content 
+- About Random Search hyperparameter optimizer: [Random Search as a Neural Network Optimization Strategy for Convolutional-Neural-Network (CNN)-based Noise Reduction in CT](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8982987/)
 
+- About Keras Tuner: [Hyperparameter Tuning Of Neural Networks using Keras Tuner](https://www.analyticsvidhya.com/blog/2021/08/hyperparameter-tuning-of-neural-networks-using-keras-tuner/)
+
+- Hyperparameter Tuning: [Hyperparameter Tuning in Python: a Complete Guide](https://neptune.ai/blog/hyperparameter-tuning-in-python-complete-guide)
+
+- ML Cross Validation: [Cross-Validation in Machine Learning: How to Do It Right](https://neptune.ai/blog/cross-validation-in-machine-learning-how-to-do-it-right)
+
+- Keras on Tensorflow: [Introduction to Keras](https://www.tensorflow.org/tutorials/keras/keras_tuner)
 - The text for the Home page was taken from Wikipedia Article A
 - Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
