@@ -86,7 +86,7 @@ Business Requirement 2: Classification
 
 - The client, the Department of Brain Repair and Rehabilitation of the Health Institute in London, UK, is focused on accurately predicting from a given medical image whether a brain tumor is present. This business objective will be achieved through the development and deployment of a TensorFlow deep learning pipeline, trained on a dataset of brain images classified as either having a tumor or not.
 - This TensorFlow pipeline will employ a convolutional neural network (CNN), a type of neural network particularly effective at identifying patterns and key features in image data, utilizing convolution and pooling layer pairs.
--   The ultimate goal of this machine learning pipeline is a binary classification model. The desired outcome is a model capable of successfully distinguishing brain images as either having a tumor or being tumor-free.
+- The ultimate goal of this machine learning pipeline is a binary classification model. The desired outcome is a model capable of successfully distinguishing brain images as either having a tumor or being tumor-free.
 - The model's output will be a classification label indicating the presence or absence of a brain tumor, based on the probability calculated by the model.
 - Upon generating the outcome, the following heuristic will be applied: Brain images identified as having a tumor will be flagged for further medical review and potential treatment planning, while those classified as tumor-free may undergo additional checks as per medical protocols.
 - The primary metrics for evaluating the success of this machine learning model will be overall model accuracy (measured by the F1 score) and recall for correctly identifying brain images with tumors.
@@ -96,6 +96,21 @@ Business Requirement 2: Classification
 
 
 ## Dashboard Design
+- This project is presented through a Streamlit dashboard web application that consists of five app pages. The client can effortlessly navigate through these pages using the interactive menu located on the left side of the page, as depicted below.
+- **Quick Project Summary** - The homepage of the project provides a fundamental overview of the business process that motivates the creation of this project, in addition to providing links to additional documentation.
+    - TODO - screenshot Dashboard and menu
+
+- **MRI Visualizer** - The first business objective of the project is addressed by the MRI Visualizer page, which focuses on Data Analysis. This page includes plots that can be toggled on and off using the built-in toolbar. Examples of these plots are provided below.
+        - TODO - screenshot plotse
+Additionally, this app page offers a tool for creating image montages. Users can select a label class (tumor or non-tumor) and view a montage generated through graphical presentation of random validation set images.
+        - TODO - screenshot Montage
+- **Model Performance** - The dataset size and label frequencies, which indicate the initial imbalance of the target, are documented on this page. Additionally, the history and evaluation of the project's machine learning model are provided. The paired graphs display the validation loss and accuracy per epoch, showcasing the model's progress over time. Furthermore, a confusion matrix illustrating the predicted and actual outcomes for the test set is presented.
+        - TODO - screenshot Montage
+
+- **Brain Tumor Detector** -
+
+- **Project Hypothesis** -
+
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
 * Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
 
