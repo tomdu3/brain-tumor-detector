@@ -222,6 +222,37 @@ This application page showcases written documentation of the project's hypothese
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
 
+## TESTING
+### Manual Testing
+
+#### User Story Testing
+*Business Requirement 1: Data Visualization**
+1. As a client, I can navigate easily through an interactive dashboard so that I can view and understand the data.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+| Navigation bar | Selecting buttons the side Menu | Selected page displayed with correct information| Functions as expected |
+
+**MRI Visualizer Page**
+- As a client, I can view visual graphs of average images,image differences and variabilities between MRI of a healthy brain and the one of the tumor, so that I can identify which is which more easily.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+ Average and variabilitiy images checkbox | Ticking on the checkbox | Relevant image plots are rendered | Functions as expected |
+| Difference between average image checkbox | Ticking on the checkox | Relevant image plots are rendered | Functions as expected |
+
+- As a client, I can view an image montage of the MRI's of the healthy brain and the one with tumor, so I can make the visual differentiation.
+
+| Feature | Action | Expected Result | Actual Result |
+| --- | --- | --- | --- |
+ Image montage chekcbox| Ticking on Image Montage checkbox | Dropdown select menu appears for label selection along with the button "Create montage" | Functions as expected|
+|Image montage creation button | After selecting the label, pressing 'Create Montage' button|Relevant image montage of correct label is displayed|Functions as expected|
+
+**Business Requirement 2: Classification**
+- As a client, I can use a machine learning model so that I can obtain a class prediction on a new unseen brain MRI image.
+- As a client, I can upload image(s) of the brain MRI scans to the dashboard so that I can run the ML model and an immediate accurate prediction of the posible brain tumor.
+- As a client, I can save model predictions in a timestamped CSV file so that I can have a documented history of the made predictions.
+### Validation
 
 ## Credits 
 
