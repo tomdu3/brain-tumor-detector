@@ -17,13 +17,13 @@ def page_mri_visualizer_body():
         f'differentiates a healthy brain MRI scan from the one with tumor .')
     
     version = 'v4'
-    if st.checkbox('Difference between average and variability image'):
+    if st.checkbox('Average and Variabilitiy images'):
       
       avg_non_tumor = plt.imread(f'outputs/{version}/avg_var_mri-non-tumor.png')
       avg_tumor = plt.imread(f'outputs/{version}/avg_var_mri-tumor.png')
 
       st.warning(
-        f'* We notice the average and variability images did show some general'
+        f'* We notice the average and variability images did show some general '
         f'patterns where we could intuitively differentiate one from another. ' 
         f'However, there are cases where that difference is not so obvious and '
         f'that is due to differences in the development, size and age of the brain.'
@@ -37,8 +37,8 @@ def page_mri_visualizer_body():
           diff_between_avgs = plt.imread(f'outputs/{version}/avg_diff.png')
 
           st.warning(
-            f'* We notice this study did show some genera;'
-            f'patterns where we could intuitively differentiate one from another.')
+            f'* We notice this study did show some general '
+            f'patterns where we could intuitively differentiate one from another. But that is not always the case.')
           st.image(diff_between_avgs, caption='Difference between average images')
 
     if st.checkbox('Image Montage'): 
