@@ -2,9 +2,9 @@
 
 # Brain Tumor Detector
 
-Brain Tumor Detector is a data science and machine learning project that is a 5th and final Project of the Code Institute's Bootcamp in Full Stack Software Development with specialization in Predictive Analytics.
-The business goal of this project is the differentiation of the healthy brain and the one with the tumor based on the brain MRI scan images. The project is realised with the [Streamlit Dashboard](## TODO - heroku link) and gives to the client a possibility to upload the MRI brain scan in order to predict the possible tumor diagnosis. THe dashboard offers the results of the data analysis, description and the analysis of the project's hypothesis, and details about the performance of the machine learning model.
-The project includes a series of Jupyter Notebooks that represent a pipleine = importation and cleaning  of the data, data visualization, development and evaluation of the deep learning model.
+Brain Tumor Detector is a data science and machine learning project that is the 5th and final Project of the Code Institute's Bootcamp in Full Stack Software Development with specialization in Predictive Analytics.
+The business goal of this project is the differentiation of the healthy brain and the one with the tumor based on the brain MRI scan images. The project is realised with the [Streamlit Dashboard](https://brain-tumor-detector-e5d30222dbc4.herokuapp.com/) and gives to the client a possibility to upload the MRI brain scan in order to predict the possible tumor diagnosis. The dashboard offers the results of the data analysis, description and the analysis of the project's hypothesis, and details about the performance of the machine learning model.
+The project includes a series of Jupyter Notebooks that represent a pipeline that includes: importation and cleaning  of the data, data visualization, development and evaluation of the deep learning model.
 
 ## Dataset Content
 The dataset is **Brain Tumor** dataset from [Kaggle](https://www.kaggle.com/datasets/jakeshbohaju/brain-tumor/data)
@@ -66,7 +66,7 @@ The project's initial hypothesis was for each business objective as follows:
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
-- Accuracy: Visualisations should make the model's performance metrics comprehensible. We will plot learning curves to monitor training progress and use confusion matrices for a detailed breakdown of classification results.
+- Accuracy: Visualizations should make the model's performance metrics comprehensible. We will plot learning curves to monitor training progress and use confusion matrices for a detailed breakdown of classification results.
 Interpretability: Visualizations will provide insight into how the model is making predictions. It is aligned with the interpretability requirement.
 Scalability: We will analyze the model's performance on varying sizes of datasets using visualizations to ensure it scales efficiently.
 Speed: Monitoring the model's inference time will ensure it meets the speed requirement.
