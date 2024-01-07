@@ -31,7 +31,6 @@ This is a brain tumor feature dataset including five first-order features and ei
 Image column defines image name and Class column defines either the image has tumor or not (1 = Tumor, 0 = Non-Tumor)
 
 ## Business Requirements
-The (fictitious) Department of Brain Repair and Rehabilitation of the Health Institute in London, UK
 The primary objective of this project is to develop a machine learning model for the early detection of brain tumors from medical images. The model should assist medical professionals in making quicker and more accurate diagnoses, and the patients should benefit from the earlier detection and the tempestive and appropriate treatment planning.
 
 Key Stakeholders, therefore should be:
@@ -48,43 +47,42 @@ Requirements:
 - Privacy: The meticulous attention should be given in the data collection in order to guarantee the patient's anonymity and consent for the data usage.
 
 In short, the project businsess objectives are as follows:
-- (1) The client is interested in having an analysis of the visual difference between the MRI brain scan of healthy and brain with tumor. The analysis should provide: the average image and variability per label in the data set.
-- (2) The client is interested in having a functional and reliable ML model that could predict the presence or absence of the tumor from the image of the MRI brain scan. For the realisation of this business objective, a deep learning pipeline should be developed with the binary classification of the MRI images. The said pipeline should be also deployed.
+1. The client is interested in having an analysis of the visual difference between the MRI brain scan of healthy and brain with tumor. The analysis should provide, among other things: the average image and variability per label in the data set.
+2. The client is interested in having a functional and reliable ML model that could predict the presence or absence of the tumor from the image of the MRI brain scan. For the realisation of this business objective, a deep learning pipeline should be developed with the binary classification of the MRI images. The said pipeline should be also deployed.
 - The Streamlit Dashboard will be developed that will finally serve as a platform for the presentation of the results of first two business objectives, together with the interactive implementation of the prediction of the unseen MRI image.
 
 
 ## Hypothesis and how to validate?
 
-The project's initial hypothesis was for each business objective as follows:
-- There's a strong conviction that there could be a way to visually observe and notice the difference in brain MRI scans between a healthy brain and the one with the tumor. Being in low resolution, the filtering of the MRI scans and the comparison between the average scan of the tumor and the healthy brain scan should show the visible shade difference.
--  The deep learning model with convolutional neural network (CNN) architecture should be able to accurately classify the unseend data of the brain MRI images as tumor or non-tumor. Data augmentation techniques will help improve model generalization.
+The project's initial hypotheses were for each business objective as follows:
+
+1. There's a strong conviction that there could be a way to visually observe and notice the difference in brain MRI scans between a healthy brain and the one with the tumor. Being in low resolution, the filtering of the MRI scans and the comparison between the average scan of the tumor and the healthy brain scan should show the visible shade difference.
+2. The deep learning model with convolutional neural network (CNN) architecture should be able to accurately classify the unseen data of the brain MRI images as tumor or non-tumor. Data augmentation techniques will help improve model generalization.
 
 - The validation od these hypotheses should be made through the graphical evaluation of the generated model, abd throug hthe testing. The model should include the validation of its accuracy and loss between epochs, and finally through a confusion matrix.
 - Upon the validation of these two hypotheses, the client should be able to use the conventional image data analysis and the ML model of this project in order to differentiate with high accuracy the presence or not of the tumor by the means of the brain MRI scan.
 
-
-
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
 - Accuracy: Visualizations should make the model's performance metrics comprehensible. We will plot learning curves to monitor training progress and use confusion matrices for a detailed breakdown of classification results.
-Interpretability: Visualizations will provide insight into how the model is making predictions. It is aligned with the interpretability requirement.
-Scalability: We will analyze the model's performance on varying sizes of datasets using visualizations to ensure it scales efficiently.
-Speed: Monitoring the model's inference time will ensure it meets the speed requirement.
-Privacy: This will be ensured through data anonymization, which will be part of the data handling and model deployment processes.
+- Interpretability: Visualizations will provide insight into how the model is making predictions. It is aligned with the interpretability requirement.
+- Scalability: We will analyze the model's performance on varying sizes of datasets using visualizations to ensure it scales efficiently.
+- Speed: Monitoring the model's inference time will ensure it meets the speed requirement.
+- Privacy: This will be ensured through data anonymization, which will be part of the data handling and model deployment processes.
 
-Business Requirement 1: Data Visualization
+**Business Requirement 1: Data Visualization**
 - As a client, I can navigate easily through an interactive dashboard so that I can view and understand the data.
 - As a client, I can view visual graphs of average images,image differences and variabilities between MRI of a healthy brain and the one of the tumor, so that I can identify which is which more easily.
 - As a client, I can view an image montage of the MRI's of the healthy brain and the one with tumor, so I can make the visual differentiation.
 
-Business Requirement 2: Classification
+**Business Requirement 2: Classification**
 - As a client, I can use a machine learning model so that I can obtain a class prediction on a new unseen brain MRI image.
 - As a client, I can upload image(s) of the brain MRI scans to the dashboard so that I can run the ML model and an immediate accurate prediction of the posible brain tumor.
 - As a client, I can save model predictions in a timestamped CSV file so that I can have a documented history of the made predictions.
 
 ## ML Business Case
 
-- The client, the Department of Brain Repair and Rehabilitation of the Health Institute in London, UK, is focused on accurately predicting from a given medical image whether a brain tumor is present. This business objective will be achieved through the development and deployment of a TensorFlow deep learning pipeline, trained on a dataset of brain images classified as either having a tumor or not.
+- The client is focused on accurately predicting from a given medical image whether a brain tumor is present. This business objective will be achieved through the development and deployment of a TensorFlow deep learning pipeline, trained on a dataset of brain images classified as either having a tumor or not.
 - This TensorFlow pipeline will employ a convolutional neural network (CNN), a type of neural network particularly effective at identifying patterns and key features in image data, utilizing convolution and pooling layer pairs.
 - The ultimate goal of this machine learning pipeline is a binary classification model. The desired outcome is a model capable of successfully distinguishing brain images as either having a tumor or being tumor-free.
 - The model's output will be a classification label indicating the presence or absence of a brain tumor, based on the probability calculated by the model.
