@@ -109,7 +109,7 @@ The model uses the 'adam' optimizer, a popular choice for deep learning models d
 Unfortunatelly, the evaluation of the model didn't give a desired output. 
 
 <details>
-<summary>These are the results of the first attempt:</summary>
+<summary>These are the results for the V1:</summary>
 
 ![Accuracy Diagram V1](./outputs/v1/model_training_acc.png)
 ![Losses Diagram V1](./outputs/v1/model_training_losses.png)
@@ -121,6 +121,60 @@ Unfortunatelly, the evaluation of the model didn't give a desired output.
 The improved and advanced setup for the build_model function now takes hyperparameters as argument. The hyperparameters are the number of convolution layers, number of filters, number of units in dense layer, dropout rate, learning rate of optimizer, etc.
 The number of units in the dense layer can range from 32-512, and the dropout layer rate can be adjusted from 0.0-0.5. The output layer settings and compilation settings of the model are similar to those of the previous model.
 The hyperparameter tuning with RandomSearch is optimizing the model. The tuner will try different hyperparameter settings over a set number of times to find the optimal configuration for the task. The goal is to maximize the validation accuracy of the model. The class weights calculation is used to deal with class imbalance in training data. This is especially useful for medical imaging datasets such as MRI scans, as one class can be heavily underrepresented. By tuning the hyperparameter, the model will be able to perform better on the specific set of MRI images.
+The model, although improved, didn't give the wanted results.
+
+<details>
+<summary>These are the results for the V2:</summary>
+
+![Accuracy Diagram V2](./outputs/v2/model_training_acc.png)
+![Losses Diagram V2](./outputs/v2/model_training_losses.png)
+![Confusion Matrix V2](./outputs/v2/confusion_matrix.png)
+
+</details>
+
+### Version 3
+The improvements are made in different tweaking model tuning.To find the best combination of hyperparameters, we use again the RandomSearch tuner. It randomly samples from the defined hyperparameter space and evaluates each configuration based on validation accuracy. The tuner performs a maximum of 10 trials, with 2 training runs per trial. This helps us explore a variety of hyperparameter configurations.
+The tuner trains the model with different hyperparameter configurations and evaluates each one on the validation set. It uses class weights and includes early stopping for efficiency.
+After the search, we retrieve the best hyperparameters and rebuild the model using those optimal settings. We print the optimal number of units in the dense layer and the learning rate for the optimizer.
+Again, this model didn't give the wanted results. There was one issue with the saved model - it gave an error upon loading. Since the training time was quite long, the new approach was decided.
+
+<details>
+<summary>These are the results for the V3:</summary>
+
+![Accuracy Diagram V3](./outputs/v3/model_training_acc.png)
+![Losses Diagram V3](./outputs/v3/model_training_losses.png)
+![Confusion Matrix V3](./outputs/v3/confusion_matrix.png)
+
+</details>
+
+### Version 4
+Several key improvements and changes compared to the previous model and hyperparameter tuning setup. Let's break down these updates:
+The architecture remains largely similar with three convolutional layers, each followed by a max pooling layer. However, the filters in the third convolutional layer are consistent with the second (both have 64 filters), unlike the previous version where the third layer had 128 filters. This consistency can help in reducing model complexity while still capturing essential features.
+
+The number of units in the dense layer remains as a tunable hyperparameter, allowing the model to experiment with different complexities in the fully connected part of the network. The learning rate of the optimizer is now a hyperparameter, allowing the model to find the optimal rate for training.
+
+Tuner Type - Hyperband: The most significant change is the switch from RandomSearch to Hyperband for hyperparameter tuning. Hyperband is an optimized version of random search with early stopping. It's more efficient because it quickly identifies the most promising hyperparameters by iteratively training a large number of models for a few epochs and only continuing with the best-performing ones.
+
+Max Epochs and Factor: The Hyperband tuner introduces max_epochs and factor parameters, which control the number of epochs for each trial and the downsampling rate of models, respectively.
+
+The project name has been changed to 'mri_tumor_tuning'.
+Training with Best Hyperparameters: After the hyperparameter search, the model is trained with the best-found hyperparameters over 25 epochs, similarly to the previous setup. The verbose level in model training is set to 1 (previously was 2 in the tuning phase).
+
+Overall Improvements:
+By employing the Hyperband tuner, the process of finding the best hyperparameters becomes more efficient and potentially more effective, especially in cases with limited computational resources. The model might be slightly simpler and more consistent, potentially improving generalization and reducing the risk of overfitting.
+The tuning now specifically targets the dense layer units and learning rate, which are critical factors in the model's performance. These changes indicate a thoughtful iteration on the model's design and tuning process, aiming to optimize performance, particularly for a potentially complex task like MRI tumor detection.
+
+Though the consistency of the Accuracy and Loss is improved, the Confusion Matrix shows that the model didn't improve much and its score doesn't satisfy the Business requirements.
+
+<details>
+<summary>These are the results for the V4:</summary>
+
+![Accuracy Diagram V4](./outputs/v4/model_training_acc.png)
+![Losses Diagram V4](./outputs/v4/model_training_losses.png)
+![Confusion Matrix V4](./outputs/v4/confusion_matrix.png)
+
+</details>
+
 
 ## Dashboard Design
 - This project is presented through a Streamlit dashboard web application that consists of five app pages. The client can effortlessly navigate through these pages using the interactive menu located on the left side of the page, as depicted below.
@@ -178,10 +232,14 @@ This application page showcases written documentation of the project's hypothese
 
 ### Content 
 - About Random Search hyperparameter optimizer: [Random Search as a Neural Network Optimization Strategy for Convolutional-Neural-Network (CNN)-based Noise Reduction in CT](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8982987/)
-
+Bergstra, Bengio: [Random Search for Hyper-Parameter Optimization](https://jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf)
 - About Keras Tuner: [Hyperparameter Tuning Of Neural Networks using Keras Tuner](https://www.analyticsvidhya.com/blog/2021/08/hyperparameter-tuning-of-neural-networks-using-keras-tuner/)
 
 - Hyperparameter Tuning: [Hyperparameter Tuning in Python: a Complete Guide](https://neptune.ai/blog/hyperparameter-tuning-in-python-complete-guide)
+
+- Hadrien Bertrand: [Hyper-parameter optimization in deep learning and transfer learning: applications to medical imaging. Machine Learning](https://pastel.hal.science/tel-02089414/document)
+
+- Blume, Bendendes, Schram: [Hyperparameter Optimization Techniques for Designing Software Sensors Based on Artificial Neural Networks](https://www.mdpi.com/1424-8220/21/24/8435)
 
 - ML Cross Validation: [Cross-Validation in Machine Learning: How to Do It Right](https://neptune.ai/blog/cross-validation-in-machine-learning-how-to-do-it-right)
 
