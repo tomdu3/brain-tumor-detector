@@ -16,7 +16,7 @@ def page_ml_performance_metrics():
 
 
     st.write("### Model History")
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = beta_columns(2)
     with col1: 
         model_acc = plt.imread(f"outputs/{version}/model_training_acc.png")
         st.image(model_acc, caption='Model Training Accuracy')
@@ -30,7 +30,7 @@ def page_ml_performance_metrics():
     st.write("---")
     
     st.write("### Confusion Matrix")
-    col1 = st.beta_columns(1)[0]
+    col1 = st.columns(1)[0]
     with col1: 
         model_acc = plt.imread(f"outputs/{version}/confusion_matrix.png")
         st.image(model_acc, caption='Confusion Matrix')
