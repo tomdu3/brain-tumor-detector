@@ -365,6 +365,7 @@ List of the libraries used in the project
 - [Git/GitHub](https://github.com/) - Version control and storage of source code
 - [CodeAnywhere](https://www.codeanywhere.com/) - IDE Workspace in which application was initially started
 - [VS Code](https://code.visualstudio.com/) - A versatile IDE used for coding, debugging, and managing the project. It was used on my machine after *CodeAnywhere* failed.
+- [Am I Responsive App](https://ui.dev/amiresponsive) - To produce the main project screenshot
 
 [Back to top ⇧](#table-of-contents)
 
