@@ -6,6 +6,33 @@ Brain Tumor Detector is a data science and machine learning project that is the 
 The business goal of this project is the differentiation of the healthy brain and the one with the tumor based on the brain MRI scan images. The project is realised with the [Streamlit Dashboard](https://brain-tumor-detector-e5d30222dbc4.herokuapp.com/) and gives to the client a possibility to upload the MRI brain scan in order to predict the possible tumor diagnosis. The dashboard offers the results of the data analysis, description and the analysis of the project's hypothesis, and details about the performance of the machine learning model.
 The project includes a series of Jupyter Notebooks that represent a pipeline that includes: importation and cleaning  of the data, data visualization, development and evaluation of the deep learning model.
 
+## Table of Contents
+1. [Dataset Content](#dataset-content)
+2. [Business Requirements](#business-requirements)
+3. [Hypothesis and how to validate?](#hypothesis-and-how-to-validate)
+4. [The rationale to map the business requirements to the Data Visualizations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
+5. [ML Business Case](#ml-business-case)
+6. [ML Model Development](#ml-model-development)
+   1. [Version 1](#version-1)
+   2. [Version 2](#version-2)
+   3. [Version 3](#version-3)
+   4. [Version 4](#version-4)
+7. [Hypotheses - Considerations and Validations](#hypotheses---considerations-and-validations)
+8. [Dashboard Design](#dashboard-design)
+9.  [Unfixed Bugs](#unfixed-bugs)
+10. [Deployment](#deployment)
+11. [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+12. [Other technologies used](#other-technologies-used)
+13. [Issues](#issues)
+14. [TESTING](#testing)
+    1.  [Manual Testing](#manual-testing)
+        1.  [User Story Testing](#user-story-testing)
+    2. [Validation](#validation)
+    3. [Automated Unit Tests](#automated-unit-tests)
+15. [Credits](#credits)
+    1.  [Content](#content)
+16. [Acknowledgements](#acknowledgements)
+
 ## Dataset Content
 The dataset is **Brain Tumor** dataset from [Kaggle](https://www.kaggle.com/datasets/jakeshbohaju/brain-tumor/data)
 
@@ -30,6 +57,8 @@ This is a brain tumor feature dataset including five first-order features and ei
 
 Image column defines image name and Class column defines either the image has tumor or not (1 = Tumor, 0 = Non-Tumor)
 
+[Back to top ⇧](#table-of-contents)
+
 ## Business Requirements
 The primary objective of this project is to develop a machine learning model for the early detection of brain tumors from medical images. The model should assist medical professionals in making quicker and more accurate diagnoses, and the patients should benefit from the earlier detection and the tempestive and appropriate treatment planning.
 
@@ -51,6 +80,7 @@ In short, the project businsess objectives are as follows:
 2. The client is interested in having a functional and reliable ML model that could predict the presence or absence of the tumor from the image of the MRI brain scan. For the realisation of this business objective, a deep learning pipeline should be developed with the binary classification of the MRI images. The said pipeline should be also deployed.
 - The Streamlit Dashboard will be developed that will finally serve as a platform for the presentation of the results of first two business objectives, together with the interactive implementation of the prediction of the unseen MRI image.
 
+[Back to top ⇧](#table-of-contents)
 
 ## Hypothesis and how to validate?
 
@@ -61,6 +91,8 @@ The project's initial hypotheses were for each business objective as follows:
 
 - The validation of these hypotheses should be made through the graphical evaluation of the generated model, and through the testing. The model should include the validation of its accuracy and loss between epochs, and finally through a confusion matrix.
 - Upon the validation of these two hypotheses, the client should be able to use the conventional image data analysis and the ML model of this project in order to differentiate with high accuracy the presence or not of the tumor by the means of the brain MRI scan.
+
+[Back to top ⇧](#table-of-contents)
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
@@ -79,6 +111,8 @@ The project's initial hypotheses were for each business objective as follows:
 - As a client, I can upload image(s) of the brain MRI scans to the dashboard so that I can run the ML model and an immediate accurate prediction of the posible brain tumor.
 - As a client, I can save model predictions in a timestamped CSV file so that I can have a documented history of the made predictions.
 
+[Back to top ⇧](#table-of-contents)
+
 ## ML Business Case
 
 - The client is focused on accurately predicting from a given medical image whether a brain tumor is present. This business objective will be achieved through the development and deployment of a TensorFlow deep learning pipeline, trained on a dataset of brain images classified as either having a tumor or not.
@@ -90,6 +124,9 @@ The project's initial hypotheses were for each business objective as follows:
 - The reasonable accuracy threshold shoud be set very high by the stakeholder, but the dataset provided could be quite limiting. A model with high accuracy will be crucial in ensuring reliable diagnoses, thereby improving patient outcomes and optimizing the use of medical resources.
 - High recall in detecting brain tumors is critical, as the cost of not identifying a present tumor (false negatives) is significantly higher than incorrectly identifying a tumor in a healthy brain (false positives). The preliminary threshold for recall should be also reasonabely high, but the dataset could be a limiting factor.
 - Therefore, a successful model for this project is one that achieves an F1 score of 0.95 or higher and a recall rate for detecting brain tumors of 0.98 or higher, aligning with the critical nature of accurate and reliable medical diagnoses.
+
+[Back to top ⇧](#table-of-contents)
+
 
 ## ML Model Development
 
@@ -172,6 +209,10 @@ Though the consistency of the Accuracy and Loss is improved, the Confusion Matri
 
 </details>
 
+<br>
+
+[Back to top ⇧](#table-of-contents)
+
 ## Hypotheses - Considerations and Validations
 
 The initial hypotheses for the project, centered around the potential of machine learning (ML) in analyzing brain MRI scans, were as follows:
@@ -195,8 +236,10 @@ As a result, while the project showed promise, further refinement and testing of
 
 One of the conclusions is that the dataset for the project didn't contain enough data to build a solid ML model. The MRI images were only of the axial view (top view) of the brain, whilst the other views (saggital, coronal and back view) were missing. I believe that with complete data, the ML model would have a greater success.
 
+[Back to top ⇧](#table-of-contents)
 
 ## Dashboard Design
+
 - This project is presented through a Streamlit dashboard web application that consists of five app pages. The client can effortlessly navigate through these pages using the interactive menu located on the left side of the page, as depicted below.
 - **Quick Project Summary** - The homepage of the project provides a fundamental overview of the business process that motivates the creation of this project, in addition to providing links to additional documentation.
     - TODO - screenshot Dashboard and menu
@@ -222,6 +265,7 @@ This application page showcases written documentation of the project's hypothese
 
         - TODO screenshots of the app
 
+[Back to top ⇧](#table-of-contents)
 
 ## Unfixed Bugs
 * There are no unfixed bugs.
@@ -255,8 +299,11 @@ To make a copy of the GitHub repository to use on your own account, one can fork
 * Open your CLI application of choice and change the current working directory to the location where you want the cloned directory to be made.
 * Type git clone, and then paste the previously copied URL to create the clone
 
+[Back to top ⇧](#table-of-contents)
+
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+
+List of the libraries used in the project
 
 - [NumPy](https://numpy.org/) - Processing of images via conversion to NumPy arrays. Many other libraries used in this project are also dependent on NumPy
 - [Pandas](https://pandas.pydata.org/) - Conversion of numerical data into DataFrames to facilitate functional operations
@@ -273,7 +320,9 @@ To make a copy of the GitHub repository to use on your own account, one can fork
 - [Heroku](https://www.heroku.com/) - Deployment of dashboard as web application
 - [Git/GitHub](https://github.com/) - Version control and storage of source code
 - [CodeAnywhere](https://www.codeanywhere.com/) - IDE Workspace in which application was initially started
-- [VS Code](https://code.visualstudio.com/) A versatile IDE used for coding, debugging, and managing the project. It was used on my machine after *CodeAnywhere* failed.
+- [VS Code](https://code.visualstudio.com/) - A versatile IDE used for coding, debugging, and managing the project. It was used on my machine after *CodeAnywhere* failed.
+
+[Back to top ⇧](#table-of-contents)
 
 ### Issues
 - *CodeAywhere* - From the conception of the project I had issues with CodeAnywhere and have found it unreliable. Especially when trying to do the data augmentation, build the model, optimize the hyperparameters,... The server would crash and then all the code would have to be rerun. Therefore, I opted to do the coding on my machine, though limited and slow.
@@ -289,6 +338,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 - *Heroku Issues* - When I tried to deploy the working version of the Streamlit app on Heroku, there were Issues with the size of the repo. I added to `.slugignore` the list of directories that weren't necessary for the execution of the app and also had to upload the last model without *lfs* command to GitHub so that it could work on Heroku. The last issue with Streamlit was that Heroku couldn't run it and in logs it was suggested that I should set the enviromental variable `PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python`. Setting this variable to python means you are choosing to use the pure Python implementation of Protocol Buffers, rather than the default C++ implementation. That was a partial solution because, although it started the app, it crashed. I have then found a solution on *Streamlit Discuss board* under [Having Trouble deploying streamlit apps on Heroku](https://discuss.streamlit.io/t/having-trouble-deploying-streamlit-apps-on-heroku/25910). The solution was to specify `Streamlit>= 1.9.2` to `requirements.txt`.
 
 - *Model V3 Loading* - there was an issue with loading of the saved third model, but the model was obsolete so I didn't return to address this bug.
+
+[Back to top ⇧](#table-of-contents)
 
 ## TESTING
 ### Manual Testing
@@ -331,6 +382,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 | --- | --- | --- | --- |
 | Download Report link | Clicking on the download link | A CSV file with timestamps in name and prediction details is saved on the client's machine | Functions as expected |
 
+[Back to top ⇧](#table-of-contents)
+
 ### Validation
 Python Code was validated as conforming to PEP8 standards:
 *Jupyter Notebooks*:
@@ -345,6 +398,8 @@ Python Code was validated as conforming to PEP8 standards:
 
 ### Automated Unit Tests
 - There were no automated unit testing. It is planned for the future development.
+
+[Back to top ⇧](#table-of-contents)
 
 ## Credits 
 
@@ -376,3 +431,4 @@ Bergstra, Bengio: [Random Search for Hyper-Parameter Optimization](https://jmlr.
 * Thanks to the people who were here in my darkest hours: Siri, Victoria, Richard, Jamie, ...
 * A special thanks to the Code Institute, especially to our leader and stronghold, Rebecca.
 
+[Back to top ⇧](#table-of-contents)
