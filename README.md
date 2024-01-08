@@ -224,7 +224,7 @@ This application page showcases written documentation of the project's hypothese
 
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+* There are no unfixed bugs.
 
 ## Deployment
 ### Heroku
@@ -234,12 +234,26 @@ This application page showcases written documentation of the project's hypothese
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+2. Log into Heroku CLI in IDE workspace terminal using the bash command: *heroku login -i* and enter user credentials
+3. Run the command *git init* to re-initialise the Git repository
+4. Run the command *heroku git:remote -a "YOUR_APP_NAME"* to connect the workspace and your previously created Heroku app.
+5. Set the app's stack to heroku-20 using the bash command: *heroku stack:set heroku-20* for compatibility with the Python 3.8.14 version used for this project
+6. Deploy the application to Heroku using the following bash command: *git push heroku main*
+7. The deployment process should happen smoothly if all deployment files are fully functional. On Heroku Dashboard click the button Open App on the top of the page to access your App.
+8. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
+
+### Forking the GitHub Project
+To make a copy of the GitHub repository to use on your own account, one can fork the repository by doing as follows:
+
+* On the page for the [repository](https://github.com/tomdu3/brain-tumor-detector), go to the 'Fork' button on the top right of the page, and click it to create a copy of the repository which should then be on your own GitHub account.
+
+### Making a Local Clone
+
+* On the page for the [repository](https://github.com/tomdu3/brain-tumor-detector), click the 'Code' button
+* To clone the repository using HTTPS, copy the HTTPS URL provided there
+* Open your CLI application of choice and change the current working directory to the location where you want the cloned directory to be made.
+* Type git clone, and then paste the previously copied URL to create the clone
 
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
@@ -252,14 +266,29 @@ This application page showcases written documentation of the project's hypothese
 - [TensorFlow](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf) - Machine learning library used to build model
 - [Keras Tuner](https://keras.io/keras_tuner/) - Tuning of hyperparameters to find best combination for model accuracy
 - [Scikit-learn](https://scikit-learn.org/) - Calculating class weights to handle target imbalance and generating classification report
-- [PIL Image](https://pillow.readthedocs.io/en/stable/reference/Image.html) - Used in data cleaning and image manipulation
+- [PIL Image](https://pillow.readthedocs.io/en/stable/reference/Image.html) - Used for image manipulation (src)
 
 ## Other technologies used
 - [Streamlit](https://streamlit.io/) - Development of dashboard for presentation of data and project delivery
 - [Heroku](https://www.heroku.com/) - Deployment of dashboard as web application
 - [Git/GitHub](https://github.com/) - Version control and storage of source code
 - [CodeAnywhere](https://www.codeanywhere.com/) - IDE Workspace in which application was initially started
+- [VS Code](https://code.visualstudio.com/) A versatile IDE used for coding, debugging, and managing the project. It was used on my machine after *CodeAnywhere* failed.
 
+### Issues
+- *CodeAywhere* - From the conception of the project I had issues with CodeAnywhere and have found it unreliable. Especially when trying to do the data augmentation, build the model, optimize the hyperparameters,... The server would crash and then all the code would have to be rerun. Therefore, I opted to do the coding on my machine, though limited and slow.
+- *GitHub Limitations* - GitHub had a limitation of 100 MB file limit and 2GB for the whole repository. Unfortunately, by mistake I allowed a lot of input data and all output date be uploaded to the GitHub. For the *\*.h5* files I used `git lfs` for the upload. But, then I reached the max repo size. I couldn't rebase easily without loosing the integrity of the repo, so opted to make a new repository and copy the code from the previous one, but with limiting uploads to the GitHub of the inputs. The old repo can be found here [Brain Tumor Detect V1](https://github.com/tomdu3/brain-tumor-detect). The commit logs are saved in the file `old_log.txt` of the new repo.
+- *Memory Issue* - I encountered this issue on my computer when the model building was running. The solution is mentioned in the credits and was a setting up the environmental variable.
+```
+2024-01-03 22:35:11.587342: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 398114816 exceeds 10% of free system memory.
+
+# solution
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+```
+- *Compatibility Issues* - There were different issues with the compatibility of the libraries that were installed initially and the syntax that was changing from a version of the library, as well as the dependency clash that was often caused. This is why I opted to copy the requirements document from the *CI Malaria Detector* walkthrough project.
+- *Heroku Issues* - When I tried to deploy the working version of the Streamlit app on Heroku, there were Issues with the size of the repo. I added to `.slugignore` the list of directories that weren't necessary for the execution of the app and also had to upload the last model without *lfs* command to GitHub so that it could work on Heroku. The last issue with Streamlit was that Heroku couldn't run it and in logs it was suggested that I should set the enviromental variable `PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python`. Setting this variable to python means you are choosing to use the pure Python implementation of Protocol Buffers, rather than the default C++ implementation. That was a partial solution because, although it started the app, it crashed. I have then found a solution on *Streamlit Discuss board* under [Having Trouble deploying streamlit apps on Heroku](https://discuss.streamlit.io/t/having-trouble-deploying-streamlit-apps-on-heroku/25910). The solution was to specify `Streamlit>= 1.9.2` to `requirements.txt`.
+
+- *Model V3 Loading* - there was an issue with loading of the saved third model, but the model was obsolete so I didn't return to address this bug.
 
 ## TESTING
 ### Manual Testing
@@ -303,6 +332,19 @@ This application page showcases written documentation of the project's hypothese
 | Download Report link | Clicking on the download link | A CSV file with timestamps in name and prediction details is saved on the client's machine | Functions as expected |
 
 ### Validation
+Python Code was validated as conforming to PEP8 standards:
+*Jupyter Notebooks*:
+- via installation of the pycodestyle package `pip install pep8 pycodestyle pycodestyle_magic`
+- at the top of the notebook the cell is added wit the code"
+```
+%load_ext pycodestyle_magic
+%pycodestyle_on
+```
+- I had to ran the cells in a copy of the notebooks and then edited the originals according to the errors indicated.
+- For the Streamlit app pages and source code files, I used the [CI Python Linter](https://pep8ci.herokuapp.com/).
+
+### Automated Unit Tests
+- There were no automated unit testing. It is planned for the future development.
 
 ## Credits 
 
@@ -322,6 +364,10 @@ Bergstra, Bengio: [Random Search for Hyper-Parameter Optimization](https://jmlr.
 - ML Cross Validation: [Cross-Validation in Machine Learning: How to Do It Right](https://neptune.ai/blog/cross-validation-in-machine-learning-how-to-do-it-right)
 
 - Keras on Tensorflow: [Introduction to Keras](https://www.tensorflow.org/tutorials/keras/keras_tuner)
+
+- Memory Issue: [Avoid tensorflow print on standard error](https://stackoverflow.com/questions/35869137/avoid-tensorflow-print-on-standard-error)
+
+- Streamlit Deployment Issue: [Having Trouble deploying streamlit apps on Heroku](https://discuss.streamlit.io/t/having-trouble-deploying-streamlit-apps-on-heroku/25910)
 
 - Verifying PEP8 on Jupyter Notebooks: [Verifying PEP8 in iPython notebook code](https://stackoverflow.com/questions/26126853/verifying-pep8-in-ipython-notebook-code)
 

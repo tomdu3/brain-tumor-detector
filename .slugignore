@@ -4,5 +4,5 @@ outputs/v3/*
 jupyter_notebooks/*
 input/validation/mri-non-tumor/Image????.jpg
 input/validation/mri-tumor/Image????.jpg
-
+assets/
 
