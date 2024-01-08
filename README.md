@@ -474,6 +474,6 @@ Bergstra, Bengio: [Random Search for Hyper-Parameter Optimization](https://jmlr.
 ## Acknowledgements
 * To my mentor, Mo Shami, for his invaluable suggestions and guidance throughout this project. His expertise and insights have been instrumental in shaping the direction and success of this project
 * Thanks to the people who were here in my darkest hours: Siri, Victoria, Richard, Jamie, ...
-* A special thanks to the Code Institute, especially to our leader and stronghold, Rebecca.
+* A special thanks to the Code Institute, particularly to our leader and stronghold, Rebecca Tracey-Timoney.
 
 [Back to top ⇧](#table-of-contents)
