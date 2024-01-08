@@ -59,7 +59,7 @@ The project's initial hypotheses were for each business objective as follows:
 1. There's a strong conviction that there could be a way to visually observe and notice the difference in brain MRI scans between a healthy brain and the one with the tumor. Being in low resolution, the filtering of the MRI scans and the comparison between the average scan of the tumor and the healthy brain scan should show the visible shade difference.
 2. The deep learning model with convolutional neural network (CNN) architecture should be able to accurately classify the unseen data of the brain MRI images as tumor or non-tumor. Data augmentation techniques will help improve model generalization.
 
-- The validation od these hypotheses should be made through the graphical evaluation of the generated model, abd throug hthe testing. The model should include the validation of its accuracy and loss between epochs, and finally through a confusion matrix.
+- The validation of these hypotheses should be made through the graphical evaluation of the generated model, and through the testing. The model should include the validation of its accuracy and loss between epochs, and finally through a confusion matrix.
 - Upon the validation of these two hypotheses, the client should be able to use the conventional image data analysis and the ML model of this project in order to differentiate with high accuracy the presence or not of the tumor by the means of the brain MRI scan.
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
@@ -172,6 +172,29 @@ Though the consistency of the Accuracy and Loss is improved, the Confusion Matri
 
 </details>
 
+## Hypotheses - Considerations and Validations
+
+The initial hypotheses for the project, centered around the potential of machine learning (ML) in analyzing brain MRI scans, were as follows:
+
+1. **Visual Differentiation Hypothesis:** It was strongly believed that differences between healthy brains and those with tumors could be visually discerned in MRI scans. Even with low-resolution images, it was hypothesized that filtering and comparing the average tumor scan against a healthy brain scan would reveal distinguishable shade differences.
+
+2. **Deep Learning Classification Hypothesis:** A deep learning model, particularly one using a convolutional neural network (CNN) architecture, was expected to accurately classify brain MRI images as either having a tumor or not. The use of data augmentation techniques was anticipated to enhance the model's ability to generalize.
+
+The validation process for these hypotheses involved:
+
+- Graphical evaluation of the model's performance, including monitoring accuracy and loss across training epochs.
+- Testing the model's effectiveness through the use of a confusion matrix.
+
+However, upon validation, the ML model faced challenges:
+
+1. **Ambiguity in Visual Differentiation:** In instances where the difference between healthy and tumor-affected scans wasn't pronounced, the model struggled to make accurate distinctions.
+
+2. **Insufficient Performance Metrics:** The accuracy and F1 scores of the model did not meet the predefined thresholds, indicating that the model was not yet ready for approval in its current state.
+
+As a result, while the project showed promise, further refinement and testing of the ML model are necessary to achieve the desired level of accuracy in differentiating between healthy and tumor-affected brain MRI scans.
+
+One of the conclusions is that the dataset for the project didn't contain enough data to build a solid ML model. The MRI images were only of the axial view (top view) of the brain, whilst the other views (saggital, coronal and back view) were missing. I believe that with complete data, the ML model would have a greater success.
+
 
 ## Dashboard Design
 - This project is presented through a Streamlit dashboard web application that consists of five app pages. The client can effortlessly navigate through these pages using the interactive menu located on the left side of the page, as depicted below.
@@ -221,6 +244,23 @@ This application page showcases written documentation of the project's hypothese
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
 
+- [NumPy](https://numpy.org/) - Processing of images via conversion to NumPy arrays. Many other libraries used in this project are also dependent on NumPy
+- [Pandas](https://pandas.pydata.org/) - Conversion of numerical data into DataFrames to facilitate functional operations
+- [Matplotlib](https://matplotlib.org/) - Reading, processing, and displaying image data, producing graphs of tabular data
+- [Seaborn](https://seaborn.pydata.org/) - Data visualisation and presentation, such as the confusion matrix heatmap and image dimensions scatter plot.
+- [Plotly](https://plotly.com/python/) - Graphical visualisation of data, used in particular on dashboard for interactive charts
+- [TensorFlow](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf) - Machine learning library used to build model
+- [Keras Tuner](https://keras.io/keras_tuner/) - Tuning of hyperparameters to find best combination for model accuracy
+- [Scikit-learn](https://scikit-learn.org/) - Calculating class weights to handle target imbalance and generating classification report
+- [PIL Image](https://pillow.readthedocs.io/en/stable/reference/Image.html) - Used in data cleaning and image manipulation
+
+## Other technologies used
+- [Streamlit](https://streamlit.io/) - Development of dashboard for presentation of data and project delivery
+- [Heroku](https://www.heroku.com/) - Deployment of dashboard as web application
+- [Git/GitHub](https://github.com/) - Version control and storage of source code
+- [CodeAnywhere](https://www.codeanywhere.com/) - IDE Workspace in which application was initially started
+
+
 ## TESTING
 ### Manual Testing
 
@@ -266,8 +306,7 @@ This application page showcases written documentation of the project's hypothese
 
 ## Credits 
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+* Through the whole project I was following particularly the CI's Malaria Detection walkthrough and example.
 
 ### Content 
 - About Random Search hyperparameter optimizer: [Random Search as a Neural Network Optimization Strategy for Convolutional-Neural-Network (CNN)-based Noise Reduction in CT](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8982987/)
@@ -283,17 +322,11 @@ Bergstra, Bengio: [Random Search for Hyper-Parameter Optimization](https://jmlr.
 - ML Cross Validation: [Cross-Validation in Machine Learning: How to Do It Right](https://neptune.ai/blog/cross-validation-in-machine-learning-how-to-do-it-right)
 
 - Keras on Tensorflow: [Introduction to Keras](https://www.tensorflow.org/tutorials/keras/keras_tuner)
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
-### Media
+- Verifying PEP8 on Jupyter Notebooks: [Verifying PEP8 in iPython notebook code](https://stackoverflow.com/questions/26126853/verifying-pep8-in-ipython-notebook-code)
 
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
-
-## Acknowledgements (optional)
-* Thank the people that provided support through this project.
+## Acknowledgements
+* To my mentor, Mo Shami, for his invaluable suggestions and guidance throughout this project. His expertise and insights have been instrumental in shaping the direction and success of this project
+* Thanks to the people who were here in my darkest hours: Siri, Victoria, Richard, Jamie, ...
+* A special thanks to the Code Institute, especially to our leader and stronghold, Rebecca.
 
