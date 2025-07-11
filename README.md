@@ -4,6 +4,10 @@
 
 ![Brain Tumor Detector Am I Responsive Image](./assets/readme_images/amiresponsive.png)
 
+[Link to Dashboard on Streamlit](https://brain-tumor-detector-tomdu3.streamlit.app/)
+[Link to Dashboard on Heroku](https://brain-tumor-detector-e5d30222dbc4.herokuapp.com/)
+
+
 Brain Tumor Detector is a data science and machine learning project that is the 5th and final Project of the Code Institute's Bootcamp in Full Stack Software Development with specialization in Predictive Analytics.
 The business goal of this project is the differentiation of the healthy brain and the one with the tumor based on the brain MRI scan images. The project is realised with the [Streamlit Dashboard](https://brain-tumor-detector-e5d30222dbc4.herokuapp.com/) and gives to the client a possibility to upload the MRI brain scan in order to predict the possible tumor diagnosis. The dashboard offers the results of the data analysis, description and the analysis of the project's hypothesis, and details about the performance of the machine learning model.
 The project includes a series of Jupyter Notebooks that represent a pipeline that includes: importation and cleaning  of the data, data visualization, development and evaluation of the deep learning model.
