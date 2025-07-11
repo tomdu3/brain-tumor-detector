@@ -330,6 +330,8 @@ This application page showcases written documentation of the project's hypothese
 7. The deployment process should happen smoothly if all deployment files are fully functional. On Heroku Dashboard click the button Open App on the top of the page to access your App.
 8. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
+### Streamlit.io
+Due to recent changes on Heroku and the deprecation of their Python stack used for this project (the Heroku-20 stack reached end-of-life on April 30th, 2025), the developer decided to refine the app and deploy it on Streamlit.io. Apps using Heroku-20 no longer receive security updates and can no longer be built. The Streamlit.io live link is: [Brain Tumor Detector on Streamlit](https://brain-tumor-detector-tomdu3.streamlit.app/)
 
 ### Forking the GitHub Project
 To make a copy of the GitHub repository to use on your own account, one can fork the repository by doing as follows:
