@@ -350,6 +350,25 @@ To make a copy of the GitHub repository to use on your own account, one can fork
 * Open your CLI application of choice and change the current working directory to the location where you want the cloned directory to be made.
 * Type git clone, and then paste the previously copied URL to create the clone
 
+
+### Run in Docker
+
+The Dockerfile has been created to ease the local run of the Streamlit app.
+
+To build the Docker image, run the following command in your terminal from the project root directory:
+```sh
+docker build -t brain-tumor-detector .
+ ```
+
+
+Once the image is built, you can run the Streamlit application using:
+```sh
+docker run -p 8501:8501 brain-tumor-detector
+```
+
+This will map port 8501 from the container to port 8501 on your local machine, allowing you to access the Streamlit app in your browser at `http://localhost:8501`.
+
+
 [Back to top ⇧](#table-of-contents)
 
 ## Main Data Analysis and Machine Learning Libraries
