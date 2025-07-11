@@ -5,6 +5,7 @@
 ![Brain Tumor Detector Am I Responsive Image](./assets/readme_images/amiresponsive.png)
 
 [Link to Dashboard on Streamlit](https://brain-tumor-detector-tomdu3.streamlit.app/)
+
 [Link to Dashboard on Heroku](https://brain-tumor-detector-e5d30222dbc4.herokuapp.com/)
 
 
