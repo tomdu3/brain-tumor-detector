@@ -49,8 +49,8 @@ def page_tumor_detector_body():
                                                             version=version)
             plot_predictions_probabilities(pred_proba, pred_class)
 
-            df_report = df_report.append(
-                {'Name': image.name, 'Result': pred_class}, ignore_index=True)
+            new_row = pd.DataFrame([{'Name': image.name, 'Result': pred_class}])
+            df_report = pd.concat([df_report, new_row], ignore_index=True)
 
         if not df_report.empty:
             st.success('Analysis Report')
